@@ -43,21 +43,23 @@ db.Crunch-Base.find(
 <!-- Your Code Goes Here -->
 
 ### 9. Order all the companies by their IPO price in a descending order.
-
-<!-- Your Code Goes Here -->
+db.Crunch-Base.find(
+sort :{"ipo.valuation_amount":-1}
+)
 
 ### 10. Retrieve the 10 companies with most employees, order by the `number of employees`
 
 <!-- Your Code Goes Here -->
 
 ### 11. All the companies founded on the second semester of the year. Limit your search to 1000 companies.
-
-<!-- Your Code Goes Here -->
+db.Crunch-Base.find(
+{founded_month:{$gt:6}} limit 100
+)
 
 ### 12. All the companies founded before 2000 that have an acquisition amount of more than 10.000.000
-
-<!-- Your Code Goes Here -->
-
+db.Crunch-Base.find(
+{deadpooled_year:{$gt:3}}
+)
 ### 13. All the companies that have been acquired after 2010, order by the acquisition amount, and retrieve only their `name` and `acquisition` field.
 
 <!-- Your Code Goes Here -->
